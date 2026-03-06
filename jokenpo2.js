@@ -27,3 +27,9 @@ function resetar(){
     document.getElementById("pc").src = "pc.png";
     document.getElementById("placar").innerHTML = "";
 }
+
+if('serviceWorker' in navigator){
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(() => console.log('Service worker registrado')).catch(err => console.log('Erro', err));
+    })
+}
